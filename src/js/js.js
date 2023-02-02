@@ -1,5 +1,5 @@
 const max = 100;
-const min = 1;
+const min = 0;
 let difficultySlider;
 let heightInput;
 let widthInput;
@@ -18,7 +18,7 @@ window.onload = function (){
 }
 
 function start(){
-    //resting old stuf;
+    //resetting old stuf;
     document.getElementById('win-container').style.display = 'none';
     errorText.innerText = '';
     playable = false;
@@ -93,8 +93,9 @@ function play(point){
     if(!playable)
         return;
     playable = false;
-    let localWidth = point % width;
-    let localHeight =  Math.floor(point / height);
+    let localWidth = getWith(point);
+    let localHeight = getHeight(point);
+    console.log("Width: " + localWidth + ", Height: "+ localHeight);
     chanceValue(localWidth, localHeight);
     chanceField(localWidth, localHeight);
     let chancedValue = localWidth - 1;
@@ -124,8 +125,8 @@ function play(point){
 }
 
 function playHidden(point){
-    let localWidth = point % width;
-    let localHeight =  Math.floor(point / height);
+    let localWidth = getWith(point);
+    let localHeight = getHeight(point);
     chanceValue(localWidth, localHeight);
     let chancedValue = localWidth - 1;
     if(chancedValue >= 0){
@@ -147,8 +148,8 @@ function playHidden(point){
 }
 
 function getColor(point){
-    let localWidth = point % width;
-    let localHeight =  Math.floor(point / height);
+    let localWidth = getWith(point);
+    let localHeight = getHeight(point);
     let bol = arena[localWidth][localHeight];
     if(bol)
         return "green";
@@ -156,7 +157,7 @@ function getColor(point){
 }
 
 function chanceField(localWidth, localHeight){
-    let point = (localHeight * height + localWidth);
+    let point = (localHeight * width + localWidth);
     document.getElementById('field' + point).style.backgroundColor = getColor(point);
 }
 
@@ -166,4 +167,12 @@ function chanceValue(localWidth, localHeight){
         green++;
     else
         green--;
+}
+
+function getHeight(point){
+    return Math.floor( point / width );
+}
+
+function getWith(point){
+    return point % width;
 }
