@@ -1,5 +1,5 @@
 const max = 100;
-const min = 2;
+const min = 1;
 let difficultySlider;
 let heightInput;
 let widthInput;
