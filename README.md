@@ -2,7 +2,7 @@
 A simple web-based game.
 ## How to play:
 Your Goal is to turn every tile green.  
-If you click a tile this tile and all adjacent tile (horizontal and vertical) will change color (between green and red).
+If you click a tile, this tile and all adjacent tile (horizontal and vertical) will change color (between green and red).
 ## Where to play
 You can of corse download fom this repository and execute in your own Browser  
 or you can play it here:  
