@@ -1,5 +1,5 @@
 const max = 100;
-const min = 1;
+const min = 2;
 let difficultySlider;
 let heightInput;
 let widthInput;
@@ -31,14 +31,14 @@ function start(){
     //checking values
     if(height == null || height === '')
         errorText.innerText += 'Missing height value\n';
-    else if(height < min)
+    else if(height <= min)
         errorText.innerText += 'Height must greater than ' + min + '\n';
     else if(height > max)
         errorText.innerText += 'Height must be less than ' + max + '\n';
 
     if(width == null || width === '')
         errorText.innerText += 'Missing width value\n';
-    else if(width < min)
+    else if(width <= min)
         errorText.innerText += 'Width must greater than ' + min + '\n';
     else if(width > max)
         errorText.innerText += 'Width must be less than ' + max + '\n';
