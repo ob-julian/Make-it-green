@@ -1,0 +1,40 @@
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+#customise-inner{
+    text-align: right;
+}
+
+#difficulty{
+    width: 90px;
+}
+
+.input{
+    margin: 0.4em;
+    width: 82px;
+}
+
+#start-container{
+    text-align: center;
+    margin: 0.4em;
+}
+
+#error{
+    margin: 0.4em;
+    color: red;
+    text-align: left;
+}
+
+#win-container{
+    position: absolute;
+    bottom: calc(50vh - 15vw);
+    width: calc(100% - 16px);
+}
+
+#win{
+    font-size: 15vw;
+    background-color: wheat;
+    border-radius: 100%;
+}

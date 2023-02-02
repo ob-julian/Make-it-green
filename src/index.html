@@ -3,10 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Game</title>
-    <script src="js/js.js"></script>
-    <link href="css/css.css">
+    <script rel="script" src="js/js.js" ></script>
+    <link rel="stylesheet" href="css/css.css" type="text/css">
 </head>
 <body>
+    <div class="center">
+        <div>
+            <div class="center">
+                <div id="customise-inner">
+                    <label for="difficulty">
+                        Difficulty:
+                        <select id="difficulty" class="input">
+                            <option value="easy">Easy</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </label>
+                    <br>
+                    <label for="height">
+                        Height:
+                        <input id="height" class="input" type="number" placeholder="8">
+                    </label>
+                    <br>
+                    <label for="width">
+                        Width:
+                        <input id="width" class="input" type="number" placeholder="8">
+                    </label>
+                    <br>
 
+                    <div id="start-container">
+                        <button id="start" onclick="start()">Go</button>
+                    </div>
+                </div>
+            </div>
+            <p id="error"></p>
+        </div>
+    </div>
+    <div class="center">
+        <div id="main">
+        </div>
+    </div>
+    <div id="win-container" style="display: none">
+        <h1 id="win" class="center">You Win!</h1>
+    </div>
 </body>
 </html>
